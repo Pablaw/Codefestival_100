@@ -39,16 +39,35 @@
 //Q71-Q74 노드 문제
 
 // Q75. 이상한 369
-const n = prompt ('숫자를 입력하세요.','');
-const arr = [];
-let answer = 0;
+// const n = prompt ('숫자를 입력하세요.','');
+// const arr = [];
+// let answer = 0;
 
-for(let i=1; i <= n; i++){
-    arr.push(i);
+// for(let i=1; i <= n; i++){
+//     arr.push(i);
+// }
+
+// for(let i=1; i <= n; i++) {
+//     for(let j=1; j <= 3; j++) {
+//         if( arr[i] % 3 === 0 && parseInt(arr[i] / 3) == `${j}`) {
+//                     answer += 1;
+                    
+//         }
+// }
+// }
+// console.log(answer);
+function sol(n){
+    let answer = 0;
+    let count = 1;
+    const d = {3 : 1, 6 : 2, 9 : 3};
+    
+    while (n.length !== 0){
+        answer += d[parseInt(n.pop(), 10)] * count;
+        count *= 3;
+    }       
+    return answer;
 }
-for(let i=0; i <= n; i++) {
-    if(arr[i] === 3 || arr[i] === 6 || arr[i] === 9) {
-        answer += 1;
-    }
-}
-console.log(answer);
+
+const user_input = new String(prompt('입력해주세요')).split('');
+
+console.log(sol(user_input));

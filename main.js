@@ -56,18 +56,59 @@
 // }
 // }
 // console.log(answer);
-function sol(n){
-    let answer = 0;
-    let count = 1;
-    const d = {3 : 1, 6 : 2, 9 : 3};
+// function sol(n){
+//     let answer = 0;
+//     let count = 1;
+//     const d = {3 : 1, 6 : 2, 9 : 3};
     
-    while (n.length !== 0){
-        answer += d[parseInt(n.pop(), 10)] * count;
-        count *= 3;
-    }       
-    return answer;
+//     while (n.length !== 0){
+//         answer += d[parseInt(n.pop(), 10)] * count;
+//         count *= 3;
+//     }       
+//     return answer;
+// }
+
+// const user_input = new String(prompt('입력해주세요')).split('');
+
+// console.log(sol(user_input));
+// Q76. 가장 긴 공통 부분 문자열
+// const str1 = prompt('문자를 입력하세요', '').toUpperCase().split('');
+// const str2 = prompt('문자를 입력하세요', '').toUpperCase().split('');
+// let arr = [];
+// let value = [];
+// solution: for(let i=0; i < str1.length; i++) {
+//    for(let j=0; j < str2.length; j++) {
+//         if(str1[i] === str2[j]) {
+//             let add = str2.shift();
+//             arr.push(add);
+//             console.log(arr);
+//             continue solution;
+//         } else { value.push(arr.length);
+//             console.log(arr.length);
+//         }
+//    }
+// }
+// console.log(value);
+
+function solution (string) {
+    let result = [];
+    for(let i=1; i < string.length+1; i++) {
+        for (let j=0; j < i; j++) {
+            result.push(string.slice(j, j+string.length-i+1));
+        }
+    } 
+    return result;
 }
 
-const user_input = new String(prompt('입력해주세요')).split('');
+const strOne = prompt('문자를 입력하세요', '').toUpperCase();
+const strTwo = prompt('문자를 입력하세요', '').toUpperCase();
+const arrOne = solution(strOne);
+const arrTwo = solution(strTwo);
 
-console.log(sol(user_input));
+let intersection = arrOne.filter(x => arrTwo.includes(x));
+
+intersection.sort((a, b) => {
+    return b.length - a.length;
+});
+
+console.log(intersection[0].length);

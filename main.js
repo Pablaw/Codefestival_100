@@ -14,4 +14,4 @@ function solution(s) {
     return answer;
 }
 
-console.log(solution('chulhw'));
+console.log(solution('qwer'));

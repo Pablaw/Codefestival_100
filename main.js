@@ -4,14 +4,28 @@
 재한사항
 s는 길이가 1 이상, 100이하인 스트링입니다. */
 
-function solution(s) {
-    var answer = '';
-    if (s.length % 2 === 0) {
-        answer = s[Math.floor(s.length / 2) - 1] + s[Math.floor(s.length / 2)]
-    } else {
-        answer = s[Math.floor(s.length/2)]
+// function solution(s) {
+//     var answer = '';
+//     if (s.length % 2 === 0) {
+//         answer = s[Math.floor(s.length / 2) - 1] + s[Math.floor(s.length / 2)]
+//     } else {
+//         answer = s[Math.floor(s.length/2)]
+//     }
+//     return answer;
+// }
+
+// console.log(solution('qwer'));
+//Q2. 약수의 개수와 덧셈
+function solution(left, right) {
+    var answer = 0;
+    for(let i = left; i <= right; i++) {
+        if(Math.sqrt(i) === Math.floor(Math.sqrt(i))) {
+            answer -= i;
+        } else {
+        answer += i;
+        }
     }
     return answer;
 }
 
-console.log(solution('qwer'));
+console.log(solution(24, 27));

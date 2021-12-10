@@ -16,7 +16,7 @@ s는 길이가 1 이상, 100이하인 스트링입니다. */
 
 // console.log(solution('qwer'));
 //Q2. 약수의 개수와 덧셈
-function solution(left, right) {
+/* function solution(left, right) {
     var answer = 0;
     for(let i = left; i <= right; i++) {
         if(Math.sqrt(i) === Math.floor(Math.sqrt(i))) {
@@ -28,4 +28,20 @@ function solution(left, right) {
     return answer;
 }
 
-console.log(solution(24, 27));
+console.log(solution(24, 27)); */
+//Q3. K번째수
+function solution(array, commands) {
+    var answer = [];
+    for (let i=0; i < commands.length; i++) {
+        let extra = commands[i];
+    let sol = array.slice(extra[0] - 1, extra[1]);
+        sol.sort((a, b) => a - b);
+        answer.push(sol[extra[2]-1]);
+    }
+    return answer;
+}
+
+let array = [1, 5, 2, 6, 3, 7, 4];
+let commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]];
+
+console.log(solution(array, commands));

@@ -30,7 +30,7 @@ s는 길이가 1 이상, 100이하인 스트링입니다. */
 
 console.log(solution(24, 27)); */
 //Q3. K번째수
-function solution(array, commands) {
+/* function solution(array, commands) {
     var answer = [];
     for (let i=0; i < commands.length; i++) {
         let extra = commands[i];
@@ -44,4 +44,21 @@ function solution(array, commands) {
 let array = [1, 5, 2, 6, 3, 7, 4];
 let commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]];
 
-console.log(solution(array, commands));
+console.log(solution(array, commands));*/
+//Q4. 완주하지 못한 선수
+function solution(participant, completion) {
+    var answer = '';
+    participant.sort();
+    completion.sort();
+    for (let i=0; i < participant.length; i++){  
+        if(participant[i] === completion[i]) {
+        } else {
+            answer = participant[i];
+            break;
+        }
+    }
+    return answer;
+}
+let participant = ["marina", "josipa", "nikola", "vinko", "filipa"];
+let completion = ["josipa", "filipa", "marina", "nikola"]
+console.log(solution(participant, completion));

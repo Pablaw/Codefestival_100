@@ -46,7 +46,7 @@ let commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]];
 
 console.log(solution(array, commands));*/
 //Q4. 완주하지 못한 선수
-function solution(participant, completion) {
+/* function solution(participant, completion) {
     var answer = '';
     participant.sort();
     completion.sort();
@@ -61,4 +61,21 @@ function solution(participant, completion) {
 }
 let participant = ["marina", "josipa", "nikola", "vinko", "filipa"];
 let completion = ["josipa", "filipa", "marina", "nikola"]
-console.log(solution(participant, completion));
+console.log(solution(participant, completion)); */
+// Q5. 두 개 뽑아서 더하기
+function solution(numbers) {
+    var answer = [];
+    for(let i=0; i < numbers.length; i++) {
+        for(let j=0; j < numbers.length; j++) {
+            if(i !== j){
+                let sol = numbers[i] + numbers[j];
+                answer.push(sol);
+            }
+        }
+    } const set = Array.from(new Set(answer));
+    set.sort((a, b) => a - b);
+    return set;
+}
+let numbers = [2,1,3,4,1];
+
+console.log(solution(numbers));

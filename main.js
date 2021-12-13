@@ -63,7 +63,7 @@ let participant = ["marina", "josipa", "nikola", "vinko", "filipa"];
 let completion = ["josipa", "filipa", "marina", "nikola"]
 console.log(solution(participant, completion)); */
 // Q5. 두 개 뽑아서 더하기
-function solution(numbers) {
+/* function solution(numbers) {
     var answer = [];
     for(let i=0; i < numbers.length; i++) {
         for(let j=0; j < numbers.length; j++) {
@@ -78,4 +78,34 @@ function solution(numbers) {
 }
 let numbers = [2,1,3,4,1];
 
-console.log(solution(numbers));
+console.log(solution(numbers)); */
+//Q6. 2016년 요일 구하기
+function solution(a, b) {
+    var answer = '';
+    const month = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let dayMonth = 0;
+    for (let i=0; i <= a - 1; i++) {
+        if(a === 1) {
+        } else {
+            dayMonth += month[i];
+        }
+    }
+    let day = dayMonth + b;
+    if(day % 7 === 1) { 
+        answer = "FRI";
+    } else if (day % 7 === 2) {
+        answer = "SAT"
+    } else if (day % 7 === 3) {
+        answer = "SUN"
+    } else if (day % 7 === 4) {
+        answer = "MON"
+    } else if (day % 7 === 5) {
+        answer = "TUE"
+    } else if (day % 7 === 6) {
+        answer = "WED"
+    } else if (day % 7 === 0) {
+        answer = "THU"
+    }
+    return answer;
+}
+console.log(solution(5, 24));

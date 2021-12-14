@@ -109,3 +109,9 @@ function solution(a, b) {
     return answer;
 }
 console.log(solution(5, 24));
+// Q7. 문자열을 정수로 바꾸기
+function solution(s) {
+    var answer = 0;
+    answer = parseInt(s, 10);
+    return answer;
+}

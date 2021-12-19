@@ -80,7 +80,7 @@ let numbers = [2,1,3,4,1];
 
 console.log(solution(numbers)); */
 //Q6. 2016년 요일 구하기
-function solution(a, b) {
+/* function solution(a, b) {
     var answer = '';
     const month = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     let dayMonth = 0;
@@ -114,4 +114,23 @@ function solution(s) {
     var answer = 0;
     answer = parseInt(s, 10);
     return answer;
+} */
+
+// 음양 더하기
+function solution(absolutes, signs) {
+    var answer = 0;
+    for(let i=0; i < absolutes.length; i++) {
+        let sol = 0;
+        if(signs[i] === true) {
+            sol = parseInt(absolutes[i]);
+        } else {
+            sol = parseInt('-'+absolutes[i]);
+        }
+        answer += sol;
+    }
+    return answer;
 }
+const absolutes = [4, 7, 12];
+const signs = [true, false, true];
+
+console.log(solution(absolutes, signs));

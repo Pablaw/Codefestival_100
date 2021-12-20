@@ -117,7 +117,7 @@ function solution(s) {
 } */
 
 // 음양 더하기
-function solution(absolutes, signs) {
+/* function solution(absolutes, signs) {
     var answer = 0;
     for(let i=0; i < absolutes.length; i++) {
         let sol = 0;
@@ -133,4 +133,21 @@ function solution(absolutes, signs) {
 const absolutes = [4, 7, 12];
 const signs = [true, false, true];
 
-console.log(solution(absolutes, signs));
+console.log(solution(absolutes, signs)); */
+
+//문자열 다루기 기본
+function solution(s) {
+    var answer = true;
+    
+for(let i=0; i < s.length; i++) {
+    if( isNaN(s[i]) === true) {
+        answer = false;
+    } else if (s.length !== 4) {
+        answer = false;
+    }
+}
+    return answer;
+}
+const s = "1234"
+console.log(s.length);
+console.log(solution(s));

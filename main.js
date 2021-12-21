@@ -136,7 +136,7 @@ const signs = [true, false, true];
 console.log(solution(absolutes, signs)); */
 
 //문자열 다루기 기본
-function solution(s) {
+/* function solution(s) {
     var answer = true;
     
 for(let i=0; i < s.length; i++) {
@@ -150,4 +150,17 @@ for(let i=0; i < s.length; i++) {
 }
 const s = "1234"
 console.log(s.length);
-console.log(solution(s));
+console.log(solution(s)); */
+
+// 3진법 뒤집기
+function solution(n) {
+    var answer = 0;
+    let n3rdx = n.toString(3);
+    let n3rdxArr = n3rdx.split('').reverse().join('');
+    answer = parseInt(n3rdxArr, 3);
+    return answer;
+}
+
+let n = 125;
+
+console.log(solution(n));

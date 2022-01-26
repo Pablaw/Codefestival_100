@@ -152,15 +152,23 @@ const s = "1234"
 console.log(s.length);
 console.log(solution(s)); */
 
-// 3진법 뒤집기
-function solution(n) {
-    var answer = 0;
-    let n3rdx = n.toString(3);
-    let n3rdxArr = n3rdx.split('').reverse().join('');
-    answer = parseInt(n3rdxArr, 3);
-    return answer;
-}
 
-let n = 125;
+// 없는 숫자 더하기
 
-console.log(solution(n));
+function solution(numbers) {
+    let answer = 0;
+    for(let i=0; i < numb.length; i++) {
+      if(numbers.indexOf(i) < 0) {
+          answer += i;
+          
+      }
+      }
+      return answer;
+    }
+
+    const numbers = [2];
+    const numb = [0,1,2,3,4,5,6,7,8,9];
+
+solution(numbers);
+
+

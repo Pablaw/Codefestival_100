@@ -152,6 +152,7 @@ const s = "1234"
 console.log(s.length);
 console.log(solution(s)); */
 
+
 // 없는 숫자 더하기
 
 function solution(numbers) {
@@ -169,3 +170,5 @@ function solution(numbers) {
     const numb = [0,1,2,3,4,5,6,7,8,9];
 
 solution(numbers);
+
+

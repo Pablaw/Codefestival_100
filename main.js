@@ -155,7 +155,7 @@ console.log(solution(s)); */
 
 // 없는 숫자 더하기
 
-function solution(numbers) {
+/* function solution(numbers) {
     let answer = 0;
     for(let i=0; i < numb.length; i++) {
       if(numbers.indexOf(i) < 0) {
@@ -171,7 +171,23 @@ function solution(numbers) {
 
 console.log(solution('chulhw'));
 
-solution(numbers);
+solution(numbers); */
 
+// 두 정수 사이의 합
 
-
+function solution(a, b) {
+    let answer = 0;
+ if (a > b) {
+        for(let i=b; i < a + 1; i++) {
+            answer += i;
+            } 
+    } else if (b > a) {
+        for(let j=a; j < b + 1; j++) {
+            answer += j;
+            }
+    } else {
+            answer = a;
+    } 
+    return answer;
+}
+console.log(solution(5,3));

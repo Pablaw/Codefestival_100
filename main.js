@@ -175,7 +175,7 @@ solution(numbers); */
 
 // 두 정수 사이의 합
 
-function solution(a, b) {
+/* function solution(a, b) {
     let answer = 0;
  if (a > b) {
         for(let i=b; i < a + 1; i++) {
@@ -190,4 +190,16 @@ function solution(a, b) {
     } 
     return answer;
 }
-console.log(solution(5,3));
+console.log(solution(5,3)); */
+
+// 약수의 합
+
+function solution(n) {
+    let answer = 0;
+    for(let i=1; i <= n; i++) {
+        if(n % i === 0) {
+            answer += i;
+        }
+    }
+    return answer;
+}

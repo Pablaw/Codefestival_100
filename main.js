@@ -194,7 +194,7 @@ console.log(solution(5,3)); */
 
 // 약수의 합
 
-function solution(n) {
+/* function solution(n) {
     let answer = 0;
     for(let i=1; i <= n; i++) {
         if(n % i === 0) {
@@ -202,4 +202,51 @@ function solution(n) {
         }
     }
     return answer;
+} */
+
+// 모의고사
+
+function solution(answers) {
+    const personA = [];
+    const personB = [];
+    const personC = [];
+    
+    let answerA = 0;
+    let answerB = 0;
+    let answerC = 0;
+    
+selectAnswer: for(let i=0; i <= 2000; i++){
+                    personA.push(1,2,3,4,5);
+                    personB.push(2,1,2,3,2,4,2,5);
+                    personC.push(3,3,1,1,2,2,4,4,5,5);
+                }
+    
+result: for(let i=0; i < answers.length; i++) {
+                if(answers[i] === personA[i]) {
+                    answerA += 1;
+                }  
+                if(answers[i] === personB[i]) {
+                    answerB += 1;
+                }
+                if(answers[i] === personC[i]) {
+                    answerC += 1;
+                }
+                }
+    
+ let answerObj = [{name : 1, point : answerA},
+                  {name : 2, point : answerB},
+                  {name : 3, point : answerC},
+                 ]
+ 
+ answerObj.sort( function(a,b) {
+     return b.point - a.point;
+ });
+    
+    if(answerA === answerB && answerB === answerC) {
+        return [answerObj[0].name, answerObj[1].name, answerObj[2].name];
+    } else if ( answerObj[0].point === answerObj[1].point) {
+        return [answerObj[0].name, answerObj[1].name];
+    } else {
+        return [answerObj[0].name];
+    }
 }

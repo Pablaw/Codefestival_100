@@ -206,7 +206,7 @@ console.log(solution(5,3)); */
 
 // 모의고사
 
-function solution(answers) {
+/* function solution(answers) {
     const personA = [];
     const personB = [];
     const personC = [];
@@ -249,4 +249,30 @@ result: for(let i=0; i < answers.length; i++) {
     } else {
         return [answerObj[0].name];
     }
+} */
+
+// 소수 만들기
+
+function solution(nums) {
+    let sum = 0;
+    let sumArr = [];
+    let answer = 0;
+   
+    for(let i=0; i < nums.length-2; i++) {
+        for(let j=i+1; j < nums.length-1; j++) {
+            for(let k=j+1; k < nums.length; k++){
+                sum = nums[i] + nums[j] + nums[k];
+                sumArr.push(sum);
+            }
+            }    
+    } 
+    primeNumb: for(let i=0; i < sumArr.length; i++) {
+                    for(let j=2; j < sumArr[i]; j++) {
+                        if(sumArr[i] % j === 0) {
+                            continue primeNumb;
+                        }
+                    }
+        answer += 1;
+    }    
+    return answer;
 }

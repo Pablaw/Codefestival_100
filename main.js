@@ -253,7 +253,7 @@ result: for(let i=0; i < answers.length; i++) {
 
 // 소수 만들기
 
-function solution(nums) {
+/* function solution(nums) {
     let sum = 0;
     let sumArr = [];
     let answer = 0;
@@ -275,4 +275,18 @@ function solution(nums) {
         answer += 1;
     }    
     return answer;
+}
+ */
+// 소수 찾기
+
+function solution(n) {
+    let numbArr = Array(n+1).fill(true).fill(false, 0, 2);
+    
+    for(let i=2; i*i <= n; i++) {
+        if(numbArr[i]) {
+        for(let j=i*i; j <= n; j += i) {
+            numbArr[j] = false;
+        }
+    }
+    } return numbArr.filter(e => e).length;
 }

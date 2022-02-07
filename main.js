@@ -309,3 +309,4 @@ function solution(x, n) {
     }
     return answer;
 }
+

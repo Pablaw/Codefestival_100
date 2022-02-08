@@ -292,15 +292,15 @@ result: for(let i=0; i < answers.length; i++) {
 } */
 
 // 직사각형 별찍기
-process.stdin.setEncoding('utf8');
+/* process.stdin.setEncoding('utf8');
 process.stdin.on('data', data => {
     const n = data.split(" ");
     const a = Number(n[0]), b = Number(n[1]);
     console.log(('*'.repeat(a)+'\n').repeat(b));
-});
+}); */
 
 // x만큼 간격이 있는 n개의 숫자
-function solution(x, n) {
+/* function solution(x, n) {
     let answer = [];
     let sum = 0;
     for(let i=0; i < n; i++) {
@@ -308,5 +308,12 @@ function solution(x, n) {
         answer.push(sum);
     }
     return answer;
-}
+} */
 
+// 핸드폰 번호 가리기
+
+function solution(phone_number) {
+    let numbArr = phone_number.split('');
+    let answer = numbArr.fill('*', 0, phone_number.length-4).join('');
+    return answer;
+}

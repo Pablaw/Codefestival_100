@@ -311,9 +311,22 @@ process.stdin.on('data', data => {
 } */
 
 // 핸드폰 번호 가리기
-
-function solution(phone_number) {
+/* function solution(phone_number) {
     let numbArr = phone_number.split('');
     let answer = numbArr.fill('*', 0, phone_number.length-4).join('');
     return answer;
+} */
+
+//하샤드 수
+function solution(x) {
+    let digitsArr = String(x).split('');
+    let digitsSum = 0;
+    for(let i=0; i < digitsArr.length; i++){
+        digitsSum += Number(digitsArr[i]);
+    }
+    if (x % digitsSum === 0) {
+        return true;
+    } else {
+        return false;
+    }
 }

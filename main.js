@@ -318,7 +318,7 @@ process.stdin.on('data', data => {
 } */
 
 //하샤드 수
-function solution(x) {
+/* function solution(x) {
     let digitsArr = String(x).split('');
     let digitsSum = 0;
     for(let i=0; i < digitsArr.length; i++){
@@ -329,4 +329,26 @@ function solution(x) {
     } else {
         return false;
     }
+} */
+
+// 콜라츠 추측
+function solution(num) {
+    let answer = 0;
+    function divied (numb) {
+        if (numb % 2 === 0) {
+            num = numb / 2;
+        } else {
+          num = numb * 3 + 1;
+        }
+    }
+while(num > 1) {
+    if(num !== 1) {
+        divied(num);
+        answer += 1;
+    } 
+    if (answer > 500) {
+        return -1;
+    }
+}
+    return answer;
 }

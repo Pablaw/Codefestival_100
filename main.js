@@ -332,7 +332,7 @@ process.stdin.on('data', data => {
 } */
 
 // 콜라츠 추측
-function solution(num) {
+/* function solution(num) {
     let answer = 0;
     function divied (numb) {
         if (numb % 2 === 0) {
@@ -351,4 +351,12 @@ while(num > 1) {
     }
 }
     return answer;
+} */
+
+// 정수 내림차순으로 배치하기
+function solution(n) {
+    const nObj = String(n).split('');
+    const nArr = Object.values(nObj).sort((a,b) => { return b - a}).join('');
+    
+    return Number(nArr);
 }

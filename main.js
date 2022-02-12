@@ -354,9 +354,21 @@ while(num > 1) {
 } */
 
 // 정수 내림차순으로 배치하기
-function solution(n) {
+/* function solution(n) {
     const nObj = String(n).split('');
     const nArr = Object.values(nObj).sort((a,b) => { return b - a}).join('');
     
     return Number(nArr);
+} */
+
+// 자릿수 더하기
+function solution(n)
+{
+    const nArr = String(n).split('');
+    let answer = 0;
+    
+    for(let i=0; i < nArr.length; i++){
+        answer += Number(nArr[i]);
+    }
+    return answer;
 }

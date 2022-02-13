@@ -362,7 +362,7 @@ while(num > 1) {
 } */
 
 // 자릿수 더하기
-function solution(n)
+/* function solution(n)
 {
     const nArr = String(n).split('');
     let answer = 0;
@@ -371,4 +371,14 @@ function solution(n)
         answer += Number(nArr[i]);
     }
     return answer;
+}
+
+function solution(n)
+{
+    return Object.values(String(n).split('')).reduce((a,b) => Number(a) + Number(b),0);
+} */
+
+// 자연수 뒤집어 배열로 만들기
+function solution(n) {
+    return String(n).split('').reverse().map(x => Number(x));
 }

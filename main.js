@@ -379,6 +379,30 @@ function solution(n)
 } */
 
 // 자연수 뒤집어 배열로 만들기
-function solution(n) {
+/* function solution(n) {
     return String(n).split('').reverse().map(x => Number(x));
+} */
+
+// 제일 작은 수 제거하기
+function solution(arr) {
+    arr.splice(arr.indexOf(Math.min.apply(null, arr)), 1);
+    if(arr.length < 1) {
+        return [-1];
+    }
+    return arr;
+    // 배열 내 최소값 중복이 있을 때
+    /* const minValue = Math.min.apply(null, arr);
+    let answer = [];
+ 
+    for(let i=0; i < arr.length; i++){
+        if(arr[i] !== minValue) {
+            answer.push(arr[i]);
+        }
+    }    
+    if(answer.length===0) {
+        answer.push(-1);
+        return answer;
+    } else {
+        return answer;
+    } */
 }

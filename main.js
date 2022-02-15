@@ -406,3 +406,32 @@ function solution(arr) {
         return answer;
     } */
 }
+
+// 시저 암호
+function solution(s, n) {
+    const alphabetStr = 'abcdefghijklmnopqrstuvwxyz';
+    const lowArr = alphabetStr.split('');
+    const upperArr = lowArr.map(x => x.toUpperCase());
+    const answer = [];
+
+    for(let i=0; i < s.length; i++) {
+        if(upperArr.indexOf(s[i]) !== -1) { // 대문자의 경우 변경
+        if(s[i] === ' ') { // 공백 입력
+            answer.push(' ');
+        } else if (upperArr.indexOf(s[i]) + n >= 25) { // 26번째 이상 알파벳 경우
+            answer.push(upperArr[(upperArr.indexOf(s[i]) + n ) % 26]);
+        } else { // 나머지 일반적인 n 더하기 순서의 경우
+        answer.push(upperArr[upperArr.indexOf(s[i]) + n]);
+        }
+        } else { // 소문자의 경우 변경
+        if(s[i] === ' ') {
+            answer.push(' ');
+        } else if (lowArr.indexOf(s[i]) + n >= 25) {
+            answer.push(lowArr[(lowArr.indexOf(s[i]) + n) % 26]);
+        } else {
+        answer.push(lowArr[lowArr.indexOf(s[i]) + n]);
+        }
+        }
+    }
+    return answer.join('');
+}

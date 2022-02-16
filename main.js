@@ -408,7 +408,7 @@ function solution(arr) {
 }
 
 // 시저 암호
-function solution(s, n) {
+/* function solution(s, n) {
     const alphabetStr = 'abcdefghijklmnopqrstuvwxyz';
     const lowArr = alphabetStr.split('');
     const upperArr = lowArr.map(x => x.toUpperCase());
@@ -434,4 +434,14 @@ function solution(s, n) {
         }
     }
     return answer.join('');
+} */
+
+// 행렬의 덧셈
+function solution(arr1, arr2) {
+    for(let i=0; i < arr1.length; i++){
+        for(let j=0; j < arr1[i].length; j++){
+           arr1[i][j] = arr1[i][j] + arr2[i][j];
+        }
+    }
+    return arr1;
 }

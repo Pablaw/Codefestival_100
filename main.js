@@ -437,11 +437,26 @@ function solution(arr) {
 } */
 
 // 행렬의 덧셈
-function solution(arr1, arr2) {
+/* function solution(arr1, arr2) {
     for(let i=0; i < arr1.length; i++){
         for(let j=0; j < arr1[i].length; j++){
            arr1[i][j] = arr1[i][j] + arr2[i][j];
         }
     }
     return arr1;
+} */
+
+// 수박수박수박수박수?
+function solution(n) {
+    let answer = "수박".repeat(n).slice(0, n);
+    return answer;
+    /* let answer = [];
+    for(let i=1; i <= n; i++){
+        if(i % 2 === 1){
+            answer.push('수');
+        } else if (i % 2 === 0){
+            answer.push('박');
+        }
+    }
+    return answer.join(''); */
 }

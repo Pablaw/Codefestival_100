@@ -447,9 +447,9 @@ function solution(arr) {
 } */
 
 // 수박수박수박수박수?
-function solution(n) {
+/* function solution(n) {
     let answer = "수박".repeat(n).slice(0, n);
-    return answer;
+    return answer; */
     /* let answer = [];
     for(let i=1; i <= n; i++){
         if(i % 2 === 1){
@@ -459,4 +459,29 @@ function solution(n) {
         }
     }
     return answer.join(''); */
+}
+
+// 서울에서 김서방 찾기
+/* function solution(seoul) {
+    return `김서방은 ${seoul.indexOf("Kim")}에 있다`;
+} */
+
+// 문자열 내림차순으로 배치하기
+/* function solution(s) {
+    return s.split('').sort().reverse().join('');
+} */
+
+// 문자열 내 p와 y의 개수 3rd
+function solution(s){
+    let pArr = [];
+    let yArr = [];
+    s.split('');
+    for(let i=0; i < s.length; i++){
+        if(s[i] === 'p' || s[i] === 'P') {
+            pArr.push(s[i]);
+        } else if(s[i] === 'y' || s[i] === 'Y') {
+            yArr.push(s[i]);
+        }
+    }
+    return (pArr.length === yArr.length) ? true : false;
 }

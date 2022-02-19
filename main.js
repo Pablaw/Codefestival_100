@@ -472,7 +472,7 @@ function solution(arr) {
 } */
 
 // 문자열 내 p와 y의 개수 3rd
-function solution(s){
+/* function solution(s){
     let pArr = [];
     let yArr = [];
     s.split('');
@@ -484,4 +484,27 @@ function solution(s){
         }
     }
     return (pArr.length === yArr.length) ? true : false;
+} */
+
+// 나누어 떨어지는 숫자 배열
+/* function solution(arr, divisor) {
+    let answer = [];
+    for(let i=0; i < arr.length; i++){
+        if(arr[i] % divisor ===0){
+            answer.push(arr[i]);
+        }
+    }
+    answer.sort();
+    return answer[0] === undefined ? [-1] : answer.sort(function(a,b) {return a-b})
+} */
+
+// 같은 숫자는 싫어
+function solution(arr) {
+    let answer = [arr[0]];
+    for(let i=1; i < arr.length; i++){
+        if(arr[i-1] !== arr[i]) {
+            answer.push(arr[i]);
+        }
+    }
+    return answer;
 }

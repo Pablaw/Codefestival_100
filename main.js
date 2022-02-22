@@ -499,7 +499,7 @@ function solution(arr) {
 } */
 
 // 같은 숫자는 싫어
-function solution(arr) {
+/* function solution(arr) {
     let answer = [arr[0]];
     for(let i=1; i < arr.length; i++){
         if(arr[i-1] !== arr[i]) {
@@ -507,5 +507,11 @@ function solution(arr) {
         }
     }
     return answer;
-}
+} */
 
+// 나머지가 1이 되는 수 찾기
+function solution(n) {
+    for(let i=2; i < n; i++) {
+        if(n % i === 1){return i;}
+    }
+}

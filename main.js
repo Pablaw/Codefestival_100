@@ -510,8 +510,19 @@ function solution(arr) {
 } */
 
 // 나머지가 1이 되는 수 찾기
-function solution(n) {
+/* function solution(n) {
     for(let i=2; i < n; i++) {
         if(n % i === 1){return i;}
     }
+} */
+
+// 부족한 금액 계산하기
+function solution(price, money, count) {
+    let sum = 0;
+    let answer = 0;
+    for(let i=1; i < count + 1; i++){
+        sum += price * i;
+    }
+    sum - money > 0 ? answer = sum - money : answer =  0;
+    return answer;
 }

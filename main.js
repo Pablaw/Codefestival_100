@@ -526,3 +526,4 @@ function solution(price, money, count) {
     sum - money > 0 ? answer = sum - money : answer =  0;
     return answer;
 }
+

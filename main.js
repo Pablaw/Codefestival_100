@@ -527,6 +527,7 @@ function solution(price, money, count) {
     return answer;
 }
 
+
 // 내적
 function solution(a, b) {
     let sum = 0;

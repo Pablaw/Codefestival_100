@@ -527,7 +527,6 @@ function solution(price, money, count) {
     return answer;
 }
 
-
 // 내적
 function solution(a, b) {
     let sum = 0;
@@ -539,7 +538,19 @@ function solution(a, b) {
     /* return a.reduce((acc, _, i) => acc += a[i] * b[i], 0); */
 }
 
-
+// 정수 제곱근 판별
+function solution(n) {
+    let answer = [];
+    for(let i=1; i <= n ** (1/2); i++){
+        if(n === i ** 2  ) {
+            answer.push((i + 1) ** 2);
+        } 
+    }
+    if(answer[0] === undefined) {
+        answer.push(-1);
+    }
+    return answer[0];
+}
 
 
 

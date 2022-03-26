@@ -552,5 +552,37 @@ function solution(n) {
     return answer[0];
 }
 
-
+// [1차] 비밀지도
+function solution(n, arr1, arr2) {
+    let arr1Answer = [];
+    let arr2Answer = [];
+    let answer = [];
+    let sumArr = [];
+    for(let i=0; i < n; i++){
+        arr1Answer.push(arr1[i].toString(2));
+        arr2Answer.push(arr2[i].toString(2));
+    }
+    for(let i=0; i < n; i++) {
+    if(arr1Answer[i].length !== n) {
+        do {
+        arr1Answer[i] = 0 + arr1Answer[i];
+    } while (arr1Answer[i].length < n);
+    }
+    if(arr2Answer[i].length !== n) {
+        do {
+        arr2Answer[i] = 0 + arr2Answer[i];
+    } while (arr2Answer[i].length < n);
+    }
+    }
+    for(let i=0; i < n; i++){
+        for(let j=0; j < n; j++){
+            if(Number(arr1Answer[i].split('')[j]) + Number(arr2Answer[i].split('')[j]) > 0) {
+                answer.push('#');
+            } else {
+                answer.push('');
+            }
+        }
+    }
+    console.log(answer);
+}
 

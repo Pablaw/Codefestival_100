@@ -384,12 +384,12 @@ function solution(n)
 } */
 
 // 제일 작은 수 제거하기
-function solution(arr) {
+/* function solution(arr) {
     arr.splice(arr.indexOf(Math.min.apply(null, arr)), 1);
     if(arr.length < 1) {
         return [-1];
     }
-    return arr;
+    return arr; */
     // 배열 내 최소값 중복이 있을 때
     /* const minValue = Math.min.apply(null, arr);
     let answer = [];
@@ -405,7 +405,7 @@ function solution(arr) {
     } else {
         return answer;
     } */
-}
+// }
 
 // 시저 암호
 /* function solution(s, n) {
@@ -459,7 +459,7 @@ function solution(arr) {
         }
     }
     return answer.join(''); */
-}
+// }
 
 // 서울에서 김서방 찾기
 /* function solution(seoul) {
@@ -517,7 +517,7 @@ function solution(arr) {
 } */
 
 // 부족한 금액 계산하기
-function solution(price, money, count) {
+/* function solution(price, money, count) {
     let sum = 0;
     let answer = 0;
     for(let i=1; i < count + 1; i++){
@@ -525,21 +525,21 @@ function solution(price, money, count) {
     }
     sum - money > 0 ? answer = sum - money : answer =  0;
     return answer;
-}
+} */
 
 // 내적
-function solution(a, b) {
+/* function solution(a, b) {
     let sum = 0;
     for(let i=0; i < a.length; i++) {
        sum += a[i] * b[i];
     }
-    return sum;
+    return sum; */
     
     /* return a.reduce((acc, _, i) => acc += a[i] * b[i], 0); */
-}
+// }
 
 // 정수 제곱근 판별
-function solution(n) {
+/* function solution(n) {
     let answer = [];
     for(let i=1; i <= n ** (1/2); i++){
         if(n === i ** 2  ) {
@@ -550,7 +550,7 @@ function solution(n) {
         answer.push(-1);
     }
     return answer[0];
-}
+} */
 
 // [1차] 비밀지도
 function solution(n, arr1, arr2) {
@@ -558,6 +558,7 @@ function solution(n, arr1, arr2) {
     let arr2Answer = [];
     let answer = [];
     let sumArr = [];
+    let answerArr = [];
     for(let i=0; i < n; i++){
         arr1Answer.push(arr1[i].toString(2));
         arr2Answer.push(arr2[i].toString(2));
@@ -579,10 +580,17 @@ function solution(n, arr1, arr2) {
             if(Number(arr1Answer[i].split('')[j]) + Number(arr2Answer[i].split('')[j]) > 0) {
                 answer.push('#');
             } else {
-                answer.push('');
+                answer.push(' ');
             }
         }
     }
-    console.log(answer);
+    for(let i=0; i < n; i++){
+    if(answer.length !== 0) {
+    do {sumArr.push(answer.shift())
+       } while (sumArr.length < n);
+    answerArr.push(sumArr.join(''));
+    sumArr = [];
+    }
+    }
+    return answerArr;
 }
-

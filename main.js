@@ -553,7 +553,7 @@ function solution(n)
 } */
 
 // [1차] 비밀지도
-function solution(n, arr1, arr2) {
+/* function solution(n, arr1, arr2) {
     let arr1Answer = [];
     let arr2Answer = [];
     let answer = [];
@@ -593,4 +593,41 @@ function solution(n, arr1, arr2) {
     }
     }
     return answerArr;
+} */
+
+// 다트 게임
+function solution(dartResult) {
+    let answer = [];
+     for(let i=0; i < dartResult.length; i++){
+       if(dartResult[i] === 'S') {
+           if(dartResult[i-1] === '0' && dartResult[i-2] !== '1') {
+               answer.push(0);
+           } else if(dartResult[i-1] === '0' && dartResult[i-2] === '1') {
+               answer.push(10);
+           } else {
+               answer.push(Number(dartResult[i-1]));
+           }
+       }
+         if(dartResult[i] === 'D') {
+           if(dartResult[i-1] === '0' && dartResult[i-2] !== '1') {
+               answer.push(0);
+           } else if(dartResult[i-1] === '0' && dartResult[i-2] === '1') {
+               answer.push(10 ** 2);
+           } else {
+               answer.push(Number(dartResult[i-1]) ** 2);
+           }
+       }
+         if(dartResult[i] === 'T') {
+           if(dartResult[i-1] === '0' && dartResult[i-2] !== '1') {
+               answer.push(0);
+           } else if(dartResult[i-1] === '0' && dartResult[i-2] === '1') {
+               answer.push(10 ** 3);
+           } else {
+               answer.push(Number(dartResult[i-1]) ** 3);
+           }
+       }
+     }
+    console.log(answer);
+    
+    // console.log(typeof dartResult);
 }
